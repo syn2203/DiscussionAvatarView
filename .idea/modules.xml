@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DiscussionAvatarView.iml" filepath="$PROJECT_DIR$/DiscussionAvatarView.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/discussionavatarview/discussionavatarview.iml" filepath="$PROJECT_DIR$/discussionavatarview/discussionavatarview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DiscussionAvatarView.iml" filepath="$PROJECT_DIR$/.idea/modules/DiscussionAvatarView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DiscussionAvatarView.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DiscussionAvatarView.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/discussionavatarview/DiscussionAvatarView.discussionavatarview.iml" filepath="$PROJECT_DIR$/.idea/modules/discussionavatarview/DiscussionAvatarView.discussionavatarview.iml" />
     </modules>
   </component>
 </project>

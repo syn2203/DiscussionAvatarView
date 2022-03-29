@@ -12,13 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ViewAnimator;
 
 import java.util.ArrayList;
-
-/**
- * Created by HARRY on 2019/1/18 0018.
- */
 
 public class DiscussionAvatarView extends ViewGroup {
     /**
@@ -56,6 +51,7 @@ public class DiscussionAvatarView extends ViewGroup {
      */
     private DiscussionAvatarListener listener;
     private boolean mIsShowFrame;
+    private int mFrameWidth;
     private int mFrameColor;
 
     public DiscussionAvatarView(Context context) {
@@ -82,7 +78,8 @@ public class DiscussionAvatarView extends ViewGroup {
             mIsLastComplete = array.getBoolean(R.styleable.DiscussionAvatarView_isLastComplete, true);
             mIsShowAnimation = array.getBoolean(R.styleable.DiscussionAvatarView_isShowAnimation, true);
             mIsShowFrame = array.getBoolean(R.styleable.DiscussionAvatarView_isShowFrame, true);
-            mFrameColor = array.getColor(R.styleable.DiscussionAvatarView_frameColor, Color.RED);
+            mFrameWidth = array.getInteger(R.styleable.DiscussionAvatarView_frameColor, Color.RED);
+            mFrameColor = array.getColor(R.styleable.DiscussionAvatarView_frameWidth, 2);
 
             mRadius = DensityUtil.dip2px(context, radius);
 
@@ -171,9 +168,9 @@ public class DiscussionAvatarView extends ViewGroup {
         for (int i = 0; i < size; i++) {
             ImageView iv = (ImageView) mInflater.inflate(R.layout.avatar, this, false);
             if (mIsLastComplete) {
-                GlideUtil.loadCircleImageView(mContext, list.get(i), iv, mIsShowFrame, mFrameColor);
+                GlideUtil.loadCircleImageView(mContext, list.get(i), iv, mIsShowFrame, mFrameWidth, mFrameColor);
             } else {
-                GlideUtil.loadCircleImageView(mContext, list.get(size - i - 1), iv, mIsShowFrame, mFrameColor);
+                GlideUtil.loadCircleImageView(mContext, list.get(size - i - 1), iv, mIsShowFrame, mFrameWidth, mFrameColor);
             }
             this.addView(iv);
         }
@@ -206,7 +203,7 @@ public class DiscussionAvatarView extends ViewGroup {
         }
         int childCount = getChildCount();
         final ImageView iv = (ImageView) mInflater.inflate(R.layout.avatar, this, false);
-        GlideUtil.loadCircleImageView(mContext, ava, iv, mIsShowFrame, mFrameColor);
+        GlideUtil.loadCircleImageView(mContext, ava, iv, mIsShowFrame, mFrameWidth, mFrameColor);
         if (mIsLastComplete) {
             this.addView(iv);
         } else {
